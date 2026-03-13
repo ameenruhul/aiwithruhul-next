@@ -1,0 +1,244 @@
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+  --muted: #6b7280;
+  --border: #ececec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-bangla), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Site Header ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 14px 24px;
+}
+
+.site-header-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  gap: 16px;
+}
+
+
+.site-header-kicker {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.site-header-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+.blog-home {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.blog-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 72px 24px 96px;
+}
+
+.blog-hero {
+  margin-bottom: 56px;
+}
+
+.blog-kicker {
+  margin: 0 0 12px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.blog-title {
+  margin: 0;
+  font-size: 44px;
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.blog-description {
+  margin: 16px 0 0;
+  max-width: 620px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.blog-posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+}
+
+.post-row:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-top: 4px;
+}
+
+.post-title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.post-title a:hover {
+  opacity: 0.7;
+}
+
+.post-excerpt {
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.empty-state {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.single-post {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 72px 24px 96px;
+}
+
+.single-post-date {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.single-post-title {
+  margin: 0;
+  font-size: 44px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.single-post-excerpt {
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.single-post-content {
+  margin-top: 40px;
+}
+
+.single-post-pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1.95;
+  color: var(--foreground);
+  background: transparent;
+  border: none;
+}
+
+/* Override Tailwind Typography prose colors to match the site palette */
+.prose {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-links: var(--foreground);
+  --tw-prose-code: var(--foreground);
+  --tw-prose-quotes: var(--muted);
+  --tw-prose-counters: var(--muted);
+  --tw-prose-bullets: var(--muted);
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.back-home-link {
+  display: inline-block;
+  margin-top: 48px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.back-home-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+
+  .blog-shell,
+  .single-post {
+    padding: 48px 20px 72px;
+  }
+
+  .blog-title,
+  .single-post-title {
+    font-size: 34px;
+  }
+
+  .post-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .post-meta {
+    padding-top: 0;
+  }
+}
